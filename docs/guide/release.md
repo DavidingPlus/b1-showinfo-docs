@@ -20,7 +20,7 @@
 
 下载链接如下：
 
-- [v0.1-dev.7](https://lzx0626.lanzouq.com/io07d34o37kh)
+- [v0.1-dev.7](https://lzx0626.lanzouq.com/io07d34o37kh)：目前测试来看，这个版本稳定的一笔，本人鏖战 4 小时 15 分钟，最终体力不支败下阵来。
 
 - [v0.1-dev.6](https://lzx0626.lanzouq.com/iAUEw34o37he)
 
