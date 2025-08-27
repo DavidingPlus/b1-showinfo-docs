@@ -30,3 +30,9 @@
 
 5. v0.1-dev.4：[https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev-to-v0.1-dev.4/v0.1-dev.4.zip](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev-to-v0.1-dev.4/v0.1-dev.4.zip)
 
+### v0.1-dev.5
+
+宋笛大佬为了方便调试 bug，增加了调试终端的版本。
+
+下载链接：[https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.5/v0.1-dev.5.zip](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.5/v0.1-dev.5.zip)。
+
