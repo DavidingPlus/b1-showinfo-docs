@@ -53,15 +53,15 @@ function pageSorter(lhs, rhs) {
 
 
 module.exports = {
-    title: '黑神话悟空九禁速通连战',
-    description: '黑神话悟空九禁速通连战',
+    title: '黑神话悟空 九禁速通连战',
+    description: '黑神话悟空 九禁速通连战',
     dest: 'build',
     base: '/',
     patterns: ['**/*.md', '**/*.vue', '!*.unused/**', '!**/*.staging.md'],
     themeConfig: {
         nav: [
-            { text: '新榜链接', link: '#' },
-            { text: '旧榜链接', link: 'https://www.sinux.com.cn' }
+            { text: '新榜链接', link: 'https://docs.qq.com/sheet/DTUhETnNCQ0RoRm9v' },
+            { text: '旧榜链接', link: 'https://docs.qq.com/sheet/DTXNnc09DRGZWVGxt' }
         ],
         sidebar: [
             {
