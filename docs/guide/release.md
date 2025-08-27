@@ -2,15 +2,9 @@
 
 > 以下所有资源的链接均为蓝奏云盘的分享链接。若想直链下载，可以科学上网去我的 Github 仓库的 [Release](https://github.com/DavidingPlus/b1-showinfo/releases) 进行下载。别问为什么没有 Gitee，这玩意狗都不用。
 
-## CSharpLoader
-
-黑神话悟空 MOD 的 CSharp 加载器，项目地址：[https://github.com/czastack/B1CSharpLoader](https://github.com/czastack/B1CSharpLoader)。
-
-请注意使用上文压缩包或者本网站提供的版本，以免发生兼容问题。下文的 ShowInfo 中也包含了 CSharpLoader 本体，直接下载 ShowInfo 的包即可，但下面的链接也附上。
-
-下载链接：[CSharpLoader](https://lzx0626.lanzouq.com/iiTdO34o371i)
-
 ## ShowInfo
+
+本 MOD 的压缩包中整合了 MOD 加载器 CSharpLoader 和 MOD 本体。
 
 为方便查找和下载，这里的版本管理采用时间线倒序，将最新的版本放在前面，后续更新稳定 stable 版本以后会单独说明。
 
@@ -20,7 +14,7 @@
 
 下载链接如下：
 
-- [v0.1-dev.7](https://lzx0626.lanzouq.com/io07d34o37kh)：目前测试来看，这个版本稳定的一笔，本人鏖战 4 小时 15 分钟，最终体力不支败下阵来。
+- [v0.1-dev.7](https://lzx0626.lanzouq.com/io07d34o37kh)：目前测试来看，这个版本稳定的一比，本人鏖战 4 小时 15 分钟，最终体力不支败下阵来。
 
 - [v0.1-dev.6](https://lzx0626.lanzouq.com/iAUEw34o37he)
 
@@ -41,4 +35,8 @@
 最初发布的测试版本。
 
 下载链接：[v0.0](https://lzx0626.lanzouq.com/ihh1S34o375c)
+
+## CSharpLoader
+
+黑神话悟空 MOD 的 CSharp 加载器，原项目地址：[B1CSharpLoader](https://github.com/czastack/B1CSharpLoader)。
 
