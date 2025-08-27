@@ -20,6 +20,8 @@ features:
 
 # 基础信息
 
+网站作者：[DavidingPlus](https://github.com/DavidingPlus)。
+
 MOD 作者：宋笛很厉害，QQ：623969184。
 
 欢迎加入九禁速通交流群（九禁速通第一人@蚌的粉丝群）：1037297581。
