@@ -6,7 +6,7 @@
 
 请注意使用上文压缩包或者本网站提供的版本，以免发生兼容问题。下文的 ShowInfo 中也包含了 CSharpLoader 本体，直接下载 ShowInfo 的包即可，但下面的链接也附上。
 
-下载链接：[CSharpLoader](https://github.com/DavidingPlus/b1-showinfo/releases/download/CSharpLoader/CSharpLoader.zip)
+下载链接：[CSharpLoader](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/CSharpLoader/CSharpLoader.zip)
 
 ## ShowInfo
 
@@ -18,25 +18,25 @@
 
 下载链接如下：
 
-- [v0.1-dev.7](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.7.zip)
+- [v0.1-dev.7](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.7.zip)
 
-- [v0.1-dev.6](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.6.zip)
+- [v0.1-dev.6](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.6.zip)
 
-- [v0.1-dev.5](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.5.zip)：宋笛大佬为了针对性地查找 Bug，增加了一个终端输出信息。
+- [v0.1-dev.5](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.5.zip)：宋笛大佬为了针对性地查找 Bug，增加了一个终端输出信息。
 
-- [v0.1-dev.4](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.4.zip)
+- [v0.1-dev.4](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.4.zip)
 
-- [v0.1-dev.3](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.3.zip)
+- [v0.1-dev.3](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.3.zip)
 
-- [v0.1-dev.2](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.2.zip)
+- [v0.1-dev.2](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.2.zip)
 
-- [v0.1-dev.1](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.1.zip)
+- [v0.1-dev.1](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.1.zip)
 
-- [v0.1-dev](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.zip)
+- [v0.1-dev](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.zip)
 
 ### v0.0
 
 最初发布的测试版本。
 
-下载链接：[v0.0](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.0/v0.0.zip)
+下载链接：[v0.0](https://gitee.com/DavidingPlus/b1-showinfo/releases/download/v0.0/v0.0.zip)
 
