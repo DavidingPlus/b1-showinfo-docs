@@ -3,8 +3,6 @@ name: Sync Release To Gitee
 on:
   workflow_dispatch:
   push:
-    branches:
-      - '**'
     tags:
       - "v*"
     schedule:
