@@ -39,6 +39,7 @@ module.exports = {
             { text: '新榜链接', link: 'https://docs.qq.com/sheet/DTUhETnNCQ0RoRm9v' },
             { text: '旧榜链接', link: 'https://docs.qq.com/sheet/DTXNnc09DRGZWVGxt' }
         ],
+        sidebarDepth: 3, // VuePress 自带的菜单栏最多显示到几级标题的字段。
         sidebar: [
             {
                 title: '快速入门',
