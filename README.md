@@ -16,13 +16,13 @@
 
 2. 解压 “实时关键数据显示 MOD（九禁连战专用）.zip”，将压缩包内的 CSharpLoder 文件夹和 version.dll 文件拷贝到<黑神话悟空安装目录>\b1\Binaries\Win64文件夹下（例如："C:\Program Files (x86)\Steam\steamapps\common\BlackMythWukong\b1\Binaries\Win64"）。
 
-<img width="1690" height="739" alt="AgAABVpOMEyJlEqtlZtOOKDlQrVQ-iwn" src="https://github.com/user-attachments/assets/9552e363-3065-4e4c-b06a-7fd9d2a2cd80" />
+![](https://github.com/user-attachments/assets/9552e363-3065-4e4c-b06a-7fd9d2a2cd80)
 
 > 注意事项！！！为确保 mod 可以和风灵月影兼容，请务必使用 mod 压缩包内提供的 CSharpLoader（如果你已经安装了其他途径下载的 CSharpLoader 用于其他 mod，请先将原来的 CSharpLoader 文件夹和 version.dll 暂时移动到其他地方备份！打完连战后再替换回原来的 CSharpLoader 和 version.dll！！！）
 
 3. 开启游戏即可看到实时关键数据显示在游戏界面。
 
-<img width="2531" height="1188" alt="AgAABVpOMEyI8eEzoclPcqJseAnB3XFk" src="https://github.com/user-attachments/assets/8d4476e4-63ca-4e36-8048-59de2a6c17e7" />
+![](https://github.com/user-attachments/assets/8d4476e4-63ca-4e36-8048-59de2a6c17e7)
 
 4. MOD 删除：将 CSharpLoader 文件夹和 version.dll 删除即可。
 
