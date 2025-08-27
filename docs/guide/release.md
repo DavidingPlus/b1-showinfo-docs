@@ -36,3 +36,9 @@
 
 下载链接：[https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.5/v0.1-dev.5.zip](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.5/v0.1-dev.5.zip)。
 
+### v0.1-dev.6
+
+在上一个版本的基础上，做了细微修改，得到的版本。
+
+下载链接：[https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.6/v0.1-dev.6.zip](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.6/v0.1-dev.6.zip)。
+
