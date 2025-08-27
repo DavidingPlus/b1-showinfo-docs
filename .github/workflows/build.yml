@@ -1,0 +1,92 @@
+name: Build and Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    name: Build Website
+    runs-on: windows-latest
+
+    steps:
+      # 检出 Git 仓库。
+      - name: Check out git repository
+        uses: actions/checkout@v4
+
+      # 安装 Node.js。
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      # 安装项目依赖。
+      - name: Install Dependencies
+        run: npm install
+
+      # 构建程序。
+      - name: Build Website
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+      # 上传构建产物。
+      - name: Upload artifacts
+        # 链接 https://github.com/actions/upload-artifact/
+        uses: actions/upload-artifact@v4
+        with:
+          name: public
+          path: public
+          include-hidden-files: true
+          if-no-files-found: error
+
+  deploy-to-gh-pages:
+    name: Deploy to gh-pages-deprecated
+    runs-on: ubuntu-latest
+    needs: build  # 表示依赖于 build 作业完成。
+    if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'  # 仅在 master 分支或手动触发时部署。
+    steps:
+      - name: Download artifact
+        # 链接 https://github.com/actions/download-artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: public
+          path: public
+
+      # 现在部署到我自己的服务器上了，因此 gh-pages 分支废弃，但是该分支需要存在，因为 hexo-seo-autopush 依赖这个分支下的 bing.json。
+      - name: Deploy to gh-pages-deprecated
+        # 链接 https://github.com/crazy-max/ghaction-github-pages/
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: gh-pages-deprecated
+          build_dir: public
+          keep_history: false # 开启以后虽然会有 git 历史，但是无法在部署分支自动清理本该删除的文件，个人觉得不舒服，所以关了。
+          allow_empty_commit: false
+          # fqdn: xxx # 自定义域名。
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}   
+
+  deploy-to-my-server:
+    name: Deploy to My Server
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'  # 触发条件同 deploy-to-gh-pages。
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: public
+          path: public
+
+      - name: Deploy to My Own Server
+        # 链接 https://github.com/easingthemes/ssh-deploy
+        uses: easingthemes/ssh-deploy@v5.0.0
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-avzr --times --update --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.TARGET }}

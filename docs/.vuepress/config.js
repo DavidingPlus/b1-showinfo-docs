@@ -55,7 +55,7 @@ function pageSorter(lhs, rhs) {
 module.exports = {
     title: '黑神话悟空 九禁速通连战',
     description: '黑神话悟空 九禁速通连战',
-    dest: 'build',
+    dest: 'public',
     base: '/',
     patterns: ['**/*.md', '**/*.vue', '!*.unused/**', '!**/*.staging.md'],
     themeConfig: {
