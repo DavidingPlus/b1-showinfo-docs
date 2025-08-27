@@ -14,13 +14,15 @@
 
 ### v0.1-dev.x
 
-宋笛大佬根据用户反馈，不断向前推进的 dev 版本，为了避免版本冗杂，因此放在一个 release 中，部分版本的特殊改动会具体说明。
+宋笛大佬根据大家反馈，不断向前推进的 dev 版本，为了避免版本冗杂，因此放在一个 release 中，部分版本的特殊改动会具体说明。
 
 下载链接如下：
 
-- [v0.1-dev.6](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.6.zip)。
+- [v0.1-dev.7](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.7.zip)
 
-- [v0.1-dev.5](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.5.zip)，宋笛大佬为了针对性地查找 Bug，增加了一个终端输出信息。
+- [v0.1-dev.6](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.6.zip)
+
+- [v0.1-dev.5](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.5.zip)：宋笛大佬为了针对性地查找 Bug，增加了一个终端输出信息。
 
 - [v0.1-dev.4](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.4.zip)
 
@@ -36,5 +38,5 @@
 
 最初发布的测试版本。
 
-下载链接：[v0.0](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.0/v0.0.zip)。
+下载链接：[v0.0](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.0/v0.0.zip)
 

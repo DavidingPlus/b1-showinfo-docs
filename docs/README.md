@@ -26,5 +26,5 @@ MOD 作者：宋笛很厉害，QQ：623969184。
 
 欢迎加入九禁速通交流群（九禁速通第一人@蚌的粉丝群）：1037297581。
 
-<center><img src="https://image.davidingplus.cn/images/2025/08/27/蚌-QQ%20群.jpg" alt="蚌-QQ 群" style="zoom:50%;" /></center>
+<center><img src="https://image.davidingplus.cn/images/2025/08/27/蚌-QQ%20群.jpg" alt="蚌-QQ 群" style="zoom:40%;" /></center>
 
