@@ -1,8 +1,106 @@
-import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
+const sidebar = {
+    items: [
+        [
+            '/guide/'
+            // '/guide/',
+            // '/guide/why-what-how',
+            // '/guide/acquiring-larksdk',
+            // '/guide/prerequisites',
+            // '/guide/getting-started-vscode',
+            // '/guide/getting-started-qtcreator',
+            // '/guide/getting-started-vs',
+            // '/guide/your-first-larksdk-project'
+        ]
+        // ],
+        // [
+        //     '/concept/',
+        //     '/concept/larksdk-config-file',
+        //     '/concept/larksdk-flexlayout',
+        //     '/concept/larksdk-ui-framework',
+        //     '/concept/larksdk-3rdparty'
+        // ],
+        // [
+        //     '/for-qt-developers/',
+        //     '/for-qt-developers/port-from-qt'
+        // ],
+        // [
+        //     '/faq/'
+        // ]
+    ],
+    guide: function () { return this.items[0]; },
+    // concept: function () { return this.items[1]; },
+    // qt: function () { return this.items[2]; },
+    // faq: function () { return this.items[3]; }
+}
 
-export default defineUserConfig({
-    bundler: viteBundler(),
-    theme: defaultTheme(),
-})
+const pageOrder = sidebar.items.flat();
+pageOrder.unshift('/');
+pageOrder.forEach((item, index, arr) => { arr[index] = item.concat(item.endsWith('/') ? 'README.md' : '.md'); });
+
+function pageSorter(lhs, rhs) {
+    const leftIndex = pageOrder.indexOf('/' + lhs.relativePath);
+    const rightIndex = pageOrder.indexOf('/' + rhs.relativePath);
+    if (leftIndex < rightIndex) {
+        return -1;
+    }
+    else if (leftIndex > rightIndex) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+
+module.exports = {
+    title: '黑神话悟空九禁速通连战',
+    description: '黑神话悟空九禁速通连战',
+    dest: 'build',
+    base: '/',
+    patterns: ['**/*.md', '**/*.vue', '!*.unused/**', '!**/*.staging.md'],
+    themeConfig: {
+        nav: [
+            { text: '新榜链接', link: '#' },
+            { text: '旧榜链接', link: 'https://www.sinux.com.cn' }
+        ],
+        sidebar: [
+            {
+                title: '快速入门',
+                path: '/guide/',
+                collapsable: false,
+                children: sidebar.guide()
+            }
+            // },
+            // {
+            //     title: '概念介绍',
+            //     path: '/concept/',
+            //     collapsable: false,
+            //     children: sidebar.concept()
+            // },
+            // {
+            //     title: '写给 Qt 开发者',
+            //     path: '/for-qt-developers/',
+            //     collapsable: false,
+            //     children: sidebar.qt()
+            // },
+            // {
+            //     title: '常见问题',
+            //     path: '/faq/',
+            //     collapsable: false,
+            //     children: sidebar.faq()
+            // }
+        ]
+    },
+    plugins: [
+        [
+            '@snowdog/vuepress-plugin-pdf-export', {
+                outputFileName: 'larksdk-manual.pdf',
+                sorter: pageSorter,
+                puppeteerLaunchOptions: {
+                    args: ['--no-sandbox', '--disable-setuid-sandbox']
+                }
+            }
+        ]
+    ],
+    host: 'localhost'
+}

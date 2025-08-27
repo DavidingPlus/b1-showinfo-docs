@@ -1,4 +1,8 @@
 *.assets/
 assets/
 
-node_modules/
+build
+node_modules
+*.pdf
+public
+!docs/.vuepress/public

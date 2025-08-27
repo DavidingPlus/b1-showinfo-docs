@@ -1,21 +1,22 @@
 {
   "name": "b1-showinfo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.15.0",
+  "description": "BlackMythWukong's Mod ShowInfo",
+  "author": "DavidingPlus",
+  "license": "MIT",
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.24",
-    "@vuepress/theme-default": "2.0.0-rc.112",
-    "sass-embedded": "^1.91.0",
-    "vue": "^3.5.20",
-    "vuepress": "2.0.0-rc.24"
+    "@snowdog/vuepress-plugin-pdf-export": "^1.1.0",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.2",
+    "vue-template-compiler": "^2.7.16",
+    "vuepress": "^1.9.10"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "dotenv -e .env vuepress dev docs",
+    "build": "dotenv -e .env vuepress build docs",
+    "export": "dotenv -e .env vuepress export docs"
   }
 }
