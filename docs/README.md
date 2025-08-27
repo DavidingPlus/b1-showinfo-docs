@@ -20,7 +20,7 @@ features:
 
 # 基础信息
 
-网站作者：[DavidingPlus](https://github.com/DavidingPlus)。
+网站作者：[DavidingPlus](https://davidingplus.cn)。
 
 MOD 作者：宋笛很厉害，QQ：623969184。
 

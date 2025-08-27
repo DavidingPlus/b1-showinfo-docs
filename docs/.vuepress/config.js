@@ -29,8 +29,8 @@ function pageSorter(lhs, rhs) {
 
 
 module.exports = {
-    title: '黑神话悟空 实时关键数据显示 MOD',
-    description: '黑神话悟空 实时关键数据显示 MOD',
+    title: '黑神话悟空 实时关键数据显示 MOD 手册',
+    description: '黑神话悟空 实时关键数据显示 MOD 手册',
     dest: 'public',
     base: '/',
     patterns: ['**/*.md', '**/*.vue', '!*.unused/**', '!**/*.staging.md'],
