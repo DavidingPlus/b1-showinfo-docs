@@ -12,7 +12,7 @@ on:
 
 jobs:
   update:
-    name: Update build status
+    name: Sync
     runs-on: ubuntu-latest
     steps:
       - name: sync github release
