@@ -10,37 +10,31 @@
 
 ## ShowInfo
 
+为方便查找和下载，这里的版本管理采用时间线倒序，将最新的版本放在前面，后续更新稳定 stable 版本以后会单独说明。
+
+### v0.1-dev.x
+
+宋笛大佬根据用户反馈，不断向前推进的 dev 版本，为了避免版本冗杂，因此放在一个 release 中，部分版本的特殊改动会具体说明。
+
+下载链接如下：
+
+- [v0.1-dev.6](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.6.zip)。
+
+- [v0.1-dev.5](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.5.zip)，宋笛大佬为了针对性地查找 Bug，增加了一个终端输出信息。
+
+- [v0.1-dev.4](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.4.zip)
+
+- [v0.1-dev.3](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.3.zip)
+
+- [v0.1-dev.2](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.2.zip)
+
+- [v0.1-dev.1](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.1.zip)
+
+- [v0.1-dev](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.x/v0.1-dev.zip)
+
 ### v0.0
 
 最初发布的测试版本。
 
 下载链接：[v0.0](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.0/v0.0.zip)。
-
-### v0.1-dev-to-v0.1-dev.4
-
-宋笛大佬根据用户反馈，修改了几个小版本，因为没有大的改动，因此放在一个 release 中。
-
-下载链接如下：
-
-1. [v0.1-dev](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev-to-v0.1-dev.4/v0.1-dev.zip)
-
-2. [v0.1-dev.1](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev-to-v0.1-dev.4/v0.1-dev.1.zip)
-
-3. [v0.1-dev.2](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev-to-v0.1-dev.4/v0.1-dev.2.zip)
-
-4. [v0.1-dev.3](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev-to-v0.1-dev.4/v0.1-dev.3.zip)
-
-5. [v0.1-dev.4](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev-to-v0.1-dev.4/v0.1-dev.4.zip)
-
-### v0.1-dev.5
-
-宋笛大佬为了方便调试 bug，增加了调试终端的版本。
-
-下载链接：[v0.1-dev.5](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.5/v0.1-dev.5.zip)。
-
-### v0.1-dev.6
-
-在上一个版本的基础上，做了细微修改，得到的版本。
-
-下载链接：[v0.1-dev.6](https://github.com/DavidingPlus/b1-showinfo/releases/download/v0.1-dev.6/v0.1-dev.6.zip)。
 

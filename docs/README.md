@@ -2,7 +2,7 @@
 home: true
 heroImage: /b1-logo.png
 heroText: 黑神话悟空
-tagline: 实时关键数据显示 MOD
+tagline: 实时关键数据显示 MOD 手册
 actionText: 开始阅读
 actionLink: /guide/
 features:
