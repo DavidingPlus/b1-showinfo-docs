@@ -1,0 +1,28 @@
+name: Sync Release To Gitee
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**'
+    tags:
+      - "v*"
+    schedule:
+      - cron: 0 4 * * *
+
+jobs:
+  update:
+    name: Update build status
+    runs-on: ubuntu-latest
+    steps:
+      - name: sync github release
+        id: create_release
+        uses: h-twinkle/sync-action@master
+        with:
+          debug: false
+          gitee_owner: DavidingPlus
+          gitee_repo: b1-showinfo
+          gitee_token: ${{ secrets.GITEE_TOKEN }}
+          github_owner: DavidingPlus
+          github_repo: b1-showinfo
+          gitee_upload_retry_times: 3
