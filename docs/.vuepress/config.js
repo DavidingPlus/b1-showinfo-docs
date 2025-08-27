@@ -1,36 +1,12 @@
 const sidebar = {
     items: [
         [
-            '/guide/'
-            // '/guide/',
-            // '/guide/why-what-how',
-            // '/guide/acquiring-larksdk',
-            // '/guide/prerequisites',
-            // '/guide/getting-started-vscode',
-            // '/guide/getting-started-qtcreator',
-            // '/guide/getting-started-vs',
-            // '/guide/your-first-larksdk-project'
+            '/guide/',
+            '/guide/install',
+            '/guide/release'
         ]
-        // ],
-        // [
-        //     '/concept/',
-        //     '/concept/larksdk-config-file',
-        //     '/concept/larksdk-flexlayout',
-        //     '/concept/larksdk-ui-framework',
-        //     '/concept/larksdk-3rdparty'
-        // ],
-        // [
-        //     '/for-qt-developers/',
-        //     '/for-qt-developers/port-from-qt'
-        // ],
-        // [
-        //     '/faq/'
-        // ]
     ],
-    guide: function () { return this.items[0]; },
-    // concept: function () { return this.items[1]; },
-    // qt: function () { return this.items[2]; },
-    // faq: function () { return this.items[3]; }
+    guide: function () { return this.items[0]; }
 }
 
 const pageOrder = sidebar.items.flat();
@@ -70,25 +46,6 @@ module.exports = {
                 collapsable: false,
                 children: sidebar.guide()
             }
-            // },
-            // {
-            //     title: '概念介绍',
-            //     path: '/concept/',
-            //     collapsable: false,
-            //     children: sidebar.concept()
-            // },
-            // {
-            //     title: '写给 Qt 开发者',
-            //     path: '/for-qt-developers/',
-            //     collapsable: false,
-            //     children: sidebar.qt()
-            // },
-            // {
-            //     title: '常见问题',
-            //     path: '/faq/',
-            //     collapsable: false,
-            //     children: sidebar.faq()
-            // }
         ]
     },
     plugins: [

@@ -1,40 +1,61 @@
-# b1-showinfo
+# 黑神话悟空实时关键数据显示 MOD 手册
 
-本人是一名黑神话悟空连战九禁速通爱好者。但鉴于 2025 年 8 月中旬左右，九禁连战各种离谱成绩出现，榜单管理者宋笛大佬正在研究如何开发一个永久显示实时暴击率到战斗界面的 mod，以杜绝使用风灵月影和给招式加暴击率 buff 的 mod 打成绩的情况，净化九禁速通环境。历经千辛万苦，宋笛大佬成功做出了测试版本，本项目是对其发包的版本归档。
+该手册基于 [VuePress](https://vuepress.vuejs.org/zh/) 制作。
 
-# 实时关键数据显示 MOD 安装教程
+若希望本地构建此项目，需本机安装 [Node.js](https://nodejs.org)。环境搭建完毕后，在根目录执行：
 
-以下内容均摘抄于 MOD 发布时的文档，并非出自本人。
+```bash
+$ npm install
+$ npm run dev
+```
 
-作者：宋笛很厉害，QQ：623969184。
+即可通过 `http://localhost:8080` 访问。
 
-欢迎加入九禁速通交流群（九禁速通第一人@蚌的粉丝群）：1037297581。
+## 备注
 
-1. 下载 MOD: 链接：https://pan.quark.cn/s/9ce4a774a5ed（提取码：MraF）。
+### 关于 `NODE_OPTIONS`
 
-> tips：这个链接可能未包含所有版本，后续会尽量将所有版本归档在本项目的 release 中。
+Node 提供了 `NODE_OPTIONS` 环境变量，用于临时处理一些 Workaround，例如常见的将 OpenSSL 提供者设置为旧版本以保证 VuePress 正常工作。参考[这篇文章](https://blog.csdn.net/weixin_44175041/article/details/131506194)。
 
-2. 解压 “实时关键数据显示 MOD（九禁连战专用）.zip”，将压缩包内的 CSharpLoder 文件夹和 version.dll 文件拷贝到<黑神话悟空安装目录>\b1\Binaries\Win64文件夹下（例如："C:\Program Files (x86)\Steam\steamapps\common\BlackMythWukong\b1\Binaries\Win64"）。
+我们一般在 `package.json` 的脚本预定义里临时设置环境变量，例如：
 
-![](https://github.com/user-attachments/assets/9552e363-3065-4e4c-b06a-7fd9d2a2cd80)
+``` json
+  "scripts": {
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider & vuepress dev docs",
+  }
+```
 
-> 注意事项！！！为确保 mod 可以和风灵月影兼容，请务必使用 mod 压缩包内提供的 CSharpLoader（如果你已经安装了其他途径下载的 CSharpLoader 用于其他 mod，请先将原来的 CSharpLoader 文件夹和 version.dll 暂时移动到其他地方备份！打完连战后再替换回原来的 CSharpLoader 和 version.dll！！！）
+但是上述代码只能在 Linux 下工作，因为 Windows 下设置环境变量的命令是 `set` 而不是 `export`：
 
-3. 开启游戏即可看到实时关键数据显示在游戏界面。
+``` json
+  "scripts": {
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider & vuepress dev docs",
+  }
+```
 
-![](https://github.com/user-attachments/assets/8d4476e4-63ca-4e36-8048-59de2a6c17e7)
+为了解决跨平台问题，我们使用 `dotenv` 包，它提供了可以从 `.env` 文件中读取环境变量配置的功能，省去了做跨平台适配的麻烦，参见[这篇文章](https://blog.csdn.net/qq_51574759/article/details/131496233)。最终成果如下：
 
-4. MOD 删除：将 CSharpLoader 文件夹和 version.dll 删除即可。
+``` json
+  "scripts": {
+    "dev": "dotenv -e .env vuepress dev docs",
+  }
+```
 
-# 版本发布日志
+其中 `.env` 指代根目录下的 `.env` 文件。在文件内部定义环境变量即可。
 
-## CSharpLoader
+> 注：[cross-env](https://www.npmjs.com/package/cross-env) 是没办法处理 `NODE_OPTIONS` 环境变量的，经测试只能处理 `NODE_ENV` 环境变量。
 
-黑神话悟空 MOD 的 CSharp 加载器，项目地址：[https://github.com/czastack/B1CSharpLoader](https://github.com/czastack/B1CSharpLoader)。
+### 导出 PDF
 
-请注意使用上文压缩包或者本项目 release 中的版本，以免发生兼容问题。
+在 Windows 下导出 PDF 可能会遇到如下类似的报错：
 
-## ShowInfo
+``` powershell
+Error: net::ERR_ADDRESS_INVALID at http://0.0.0.0:8080/
+```
 
-待补。
+经查询 issue，问题已解决，详见[这里](https://github.com/SnowdogApps/vuepress-plugin-pdf-export/issues/9)。
+
+### GitHub CI
+
+由于生成的 PDF 文档是带中文字体的，而 GitHub CI 的 Docker 的 Ubuntu 镜像默认是没有中文字体的，所以使用 Ubuntu 打出来的 PDF 会缺失中文字体，在 PDF 中就是方格代替，文件大小也会小很多。因此使用 Windows 系统跑 CI。
 
