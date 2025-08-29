@@ -3,7 +3,8 @@ const sidebar = {
         [
             '/guide/',
             '/guide/install',
-            '/guide/release'
+            '/guide/release',
+            '/guide/rules'
         ]
     ],
     guide: function () { return this.items[0]; }
