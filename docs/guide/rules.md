@@ -17,7 +17,7 @@
 ## 入榜规则
 
 1. 不得使用风灵月影（风灵月影全局加速功能除外）、增加 Buff MOD 等修改正常游戏数据的工具进行连战，一但发现永不录用成绩。
-2. 必须使用九禁连战速通专用关键数据实时显示 MOD 进行连战（下载地址：https://b1.davidingplus.cn/guide/release.html#showinfo，安装教程：https://b1.davidingplus.cn/guide/install.html）。版本号必须 >= 1.0。
+2. 必须使用九禁连战速通专用关键数据实时显示 MOD 进行连战（[下载地址](https://b1.davidingplus.cn/guide/release.html#showinfo)，[安装教程](https://b1.davidingplus.cn/guide/install.html)）。版本号必须 >= 1.0。
 3. 战斗界面必须展示全部 UI 组件，伤害数字显示必须打开。
 4. 游戏界面不能遮挡正常交战画面及数据显示界面。
 5. 战斗过程中不能进行暂停游戏，切换界面，激活软件等无关操作。
