@@ -91,13 +91,89 @@ OBS 能在 Steam 商店中找到，直接下载即可。
 
 这样设置好以后，就可以开始录制了。更进一步还可以设置快捷键方便开始录制和停止录制。
 
-## 键盘映射
+## 键鼠映射
 
 键盘映射需要用到一个 OBS 插件 [Input Overlay](https://obsproject.com/forum/resources/input-overlay.552/)，它能在直播中显示键盘、鼠标和手柄的输入情况。它会新增一个来源，用于可视化输入。
 
 这个插件通过纹理（texture）和配置文件来生成覆盖层。这意味着你可以自行配置在屏幕上显示哪些按键、它们的排列方式以及外观。默认情况下，插件已经自带了鼠标、键盘和手柄的预设文件。这些预设文件位于 GitHub Release 页面中的 `presets` 压缩包内。在 OBS 中创建一个 “Input Overlay” 来源时，你可以将其指向这些预设文件，或者指向你自己制作的配置文件。
 
+原下载链接在外网 [Github](https://github.com/univrsal/input-overlay) 上，有兴趣的朋友可以科学上网自己去下载最新版本。这里在蓝奏云上备份了 input-overlay v5.0.6。
+
+下载链接：
+
+- [input-overlay-5.0.6-windows-x64.zip](https://lzx0626.lanzouq.com/iU8hy34xgfeb)
+- [input-overlay-5.0.6-presets.zip](https://lzx0626.lanzouq.com/iVDRY34xgf0h)
+
+下载好以后，首先解压 input-overlay-5.0.6-windows-x64.zip，得到的文件类似如下：
+
+![image-20250830131510053](https://image.davidingplus.cn/images/2025/08/30/image-20250830131510053.png)
+
+将这些目录全部拷贝你自己的到 OBS 的安装根目录下，例如我的目录就是 `D:\Scoop\apps\obs-studio\current`，OBS 根目录类似如下：
+
+![image-20250830131618256](https://image.davidingplus.cn/images/2025/08/30/image-20250830131618256.png)
+
+完事以后重新打开 OBS，在添加源里面就会发现多了一个**输入叠加**的选项。这个就是添加键鼠映射的入口。
+
+<center><img src="https://image.davidingplus.cn/images/2025/08/30/image-20250830131752608.png" alt="image-20250830131752608" style="zoom: 40%;" /></center>
+
+以键盘映射为例，点击输入叠加，会让你选择贴图文件和配置文件。这些东西在上文提到的另一个文件 input-overlay-5.0.6-presets.zip 中，官方给了我们一些预设，直接拿来使用即可。将该文件解压出来以后，放到你自己找得到的位置（不一定是 OBS 的安装根目录）即可。
+
+![image-20250830131917080](https://image.davidingplus.cn/images/2025/08/30/image-20250830131917080.png)
+
+由于规则要求键盘映射需要全尺寸键盘，因此键盘的贴图文件推荐使用 `qwertz_full_size_german`。以下以 input-overlay-5.0.6-presets 目录为基准，给出了贴图文件和配置文件的路径。
+
+```markdown
+ 贴图文件：input-overlay-5.0.6-presets/qwertz_full_size_german/qwertz_full_size_german.png
+ 配置文件：input-overlay-5.0.6-presets/qwertz_full_size_german/qwertz_full_size_german.json
+```
+
+添加好以后，你就能在 OBS 中看到键盘映射了。至于在 OBS 的屏幕上放在哪，有多大，这个就读者自行去探索吧。
+
+另外，附上我自己使用的鼠标映射：
+
+```markdown
+贴图文件：input-overlay-5.0.6-presets/mouse/mouse.png
+配置文件：input-overlay-5.0.6-presets/mouse/mouse-arrow.json
+```
+
 ## 手柄映射
 
+手柄映射有两种方式，一种是和上文键鼠映射的方式一样，添加一个手柄的贴图和 json 文件，另一种是通过浏览器 URL 采集实现。
+
+第一种方式，同上文给出我自己推荐的手柄映射配置：
+
+```markdown
+贴图文件：input-overlay-5.0.6-presets/gamepad/game-pad.png
+配置文件：input-overlay-5.0.6-presets/gamepad/game-pad.json
+```
+
+第二种方式，通过浏览器 URL 采集实现。首先给出一个在线链接 [Gamepad Viewer](https://ezgame.cc/tools/gamepadviewer.com/)。这是一个在线网站，可以让你根据自己的喜好设置手柄映射，然后返回给你一个 URL，这个 URL 能被 OBS 的浏览器源识别并展示出来。
+
+这里给我我自己的手柄映射 URL：
+
+```markdown
+https://ezgame.cc/tools/gamepadviewer.com/?p=1&s=0
+```
+
+![image-20250830133003743](https://image.davidingplus.cn/images/2025/08/30/image-20250830133003743.png)
+
+## 帧率显示
+
+帧率显示有很多办法，我知道就有微信小飞机，Steam 自带的帧数显示，部分厂商例如联想自带的帧数显示，游戏加加等。
+
+读者选择自己喜欢的就行，这里不再赘述。
+
+## 最终效果
+
+最终录制出来的效果大致如下：
+
+![image-20250830133603428](https://image.davidingplus.cn/images/2025/08/30/image-20250830133603428.png)
+
 ## 回放缓存
+
+待补。
+
+## 参考文档
+
+待补。
 
