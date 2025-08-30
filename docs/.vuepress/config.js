@@ -4,7 +4,8 @@ const sidebar = {
             '/guide/',
             '/guide/install',
             '/guide/release',
-            '/guide/rules'
+            '/guide/rules',
+            '/guide/record-video'
         ]
     ],
     guide: function () { return this.items[0]; }
