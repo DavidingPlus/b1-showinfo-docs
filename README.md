@@ -59,3 +59,7 @@ Error: net::ERR_ADDRESS_INVALID at http://0.0.0.0:8080/
 
 由于生成的 PDF 文档是带中文字体的，而 GitHub CI 的 Docker 的 Ubuntu 镜像默认是没有中文字体的，所以使用 Ubuntu 打出来的 PDF 会缺失中文字体，在 PDF 中就是方格代替，文件大小也会小很多。因此使用 Windows 系统跑 CI。
 
+# TODO
+
+后续改为 [Xmake](https://xmake.io/) 的文档风格，仓库参考 [xmake-io/xmake-docs: The xmake online documentation site](https://github.com/xmake-io/xmake-docs)。
+

@@ -173,6 +173,10 @@ https://ezgame.cc/tools/gamepadviewer.com/?p=1&s=0
 
 待补。
 
+## 使用 OBS 直播
+
+待补。
+
 ## 参考文档
 
 待补。
