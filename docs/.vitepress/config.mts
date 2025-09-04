@@ -56,6 +56,11 @@ export default defineConfig({
           detailedView: true
         }
       }
+    },
+
+    footer: {
+      message: '祝各位九禁速通天命人坐牢愉快！！！',
+      copyright: 'Copyright © 2025-present <a href="https://davidingplus.cn/">DavidingPlus</a>'
     }
   },
 
