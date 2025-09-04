@@ -1,6 +1,19 @@
 {
+  "name": "b1-showinfo-docs",
+  "version": "1.0.0",
+  "description": "BlackMythWukong's Mod ShowInfo",
+  "author": "DavidingPlus",
+  "homepage": "https://github.com/DavidingPlus/b1-showinfo-docs",
+  "license": "MIT",
   "devDependencies": {
-    "vitepress": "^2.0.0-alpha.12"
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0",
+    "vitepress": "^2.0.0-alpha.6",
+    "vitepress-plugin-group-icons": "^1.6.3",
+    "vitepress-plugin-llms": "^1.7.3"
+  },
+  "directories": {
+    "doc": "docs"
   },
   "scripts": {
     "dev": "vitepress dev docs",

@@ -1,8 +1,45 @@
 *.assets/
 assets/
 
+# for vuepress
 build
 node_modules
 *.pdf
-public
-!docs/.vuepress/public
+# public
+# !docs/.vuepress/public/**
+
+# for vitepress
+*.out
+*.suo
+*~
+*.swp
+*.swo
+*.bak
+*.orig
+*.pdb
+*.idb
+*.ilk
+*.stackdump
+*.manifest
+.ccache
+.svn
+.DS_Store
+.xmake
+*.deb
+*.zip
+*.gch
+*.gch.d
+cscope.*
+gmon.out
+tags
+doc
+install.log
+build
+.vscode
+.history/**
+docs/.vitepress/dist
+docs/.vitepress/cache
+node_modules
+package-lock.json
+pnpm-lock.yaml
+!docs/public/**
