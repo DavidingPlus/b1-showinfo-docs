@@ -1,9 +1,45 @@
-import { defineConfig } from 'vitepress'
+import {
+  defineConfig,
+  resolveSiteDataByRoute,
+  type HeadConfig
+} from 'vitepress'
+
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import { fileURLToPath, URL } from 'node:url'
+
+import llmstxt from 'vitepress-plugin-llms'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "实时关键数据显示 MOD 手册",
   description: "黑神话悟空 实时关键数据显示 MOD 手册",
+
+  metaChunk: true,
+
+  markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin, {
+        titleBar: {
+          includeSnippet: true,
+        },
+      })
+    },
+  },
+
+  head: [
+    [
+      'link',
+      { rel: 'icon', type: 'image/svg+xml', href: '/assets/logo.svg' }
+    ],
+    [
+      'link',
+      { rel: 'icon', type: 'image/png', href: '/assets/logo.png' }
+    ],
+    ['meta', { name: 'theme-color', content: '#3c8772' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'B1 ShowInfo Docs' }],
+    ['meta', { property: 'og:url', content: 'https://b1.davidingplus.cn/' }],
+  ],
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -21,5 +57,43 @@ export default defineConfig({
         }
       }
     }
+  },
+
+  vite: {
+    plugins: [
+      groupIconVitePlugin(),
+      llmstxt()
+    ],
+    experimental: {
+      enableNativePlugin: true
+    },
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPDocAside\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/VPDocAside.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/VPSidebar\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/VPSidebar.vue', import.meta.url)
+          )
+        }
+      ]
+    }
+  },
+
+  transformPageData: (pageData, ctx) => {
+    const site = resolveSiteDataByRoute(
+      ctx.siteConfig.site,
+      pageData.relativePath
+    )
+    const title = `${pageData.title || site.title} | ${pageData.description || site.description}`
+      ; ((pageData.frontmatter.head ??= []) as HeadConfig[]).push(
+        ['meta', { property: 'og:locale', content: site.lang }],
+        ['meta', { property: 'og:title', content: title }]
+      )
   }
 })
