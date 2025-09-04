@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "黑神话悟空"
   text: "实时关键数据显示 MOD 手册"
-  tagline: "能实时展示游戏内的各种数据，方便玩家查阅"
+  tagline: "实时展示游戏内的各种数据，方便玩家查阅和速通公平"
   actions:
     - theme: brand
       text: 开始阅读
