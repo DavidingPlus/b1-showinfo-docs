@@ -1,22 +1,10 @@
 {
-  "name": "b1-showinfo-docs",
-  "version": "1.0.0",
-  "description": "BlackMythWukong's Mod ShowInfo",
-  "author": "DavidingPlus",
-  "license": "MIT",
   "devDependencies": {
-    "@snowdog/vuepress-plugin-pdf-export": "^1.1.0",
-    "dotenv": "^16.4.5",
-    "dotenv-cli": "^7.4.2",
-    "vue-template-compiler": "^2.7.16",
-    "vuepress": "^1.9.10"
-  },
-  "directories": {
-    "doc": "docs"
+    "vitepress": "^2.0.0-alpha.12"
   },
   "scripts": {
-    "dev": "dotenv -e .env vuepress dev docs",
-    "build": "dotenv -e .env vuepress build docs",
-    "export": "dotenv -e .env vuepress export docs"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
   }
 }
