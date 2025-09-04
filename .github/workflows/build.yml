@@ -39,8 +39,8 @@ jobs:
         # 链接 https://github.com/actions/upload-artifact/
         uses: actions/upload-artifact@v4
         with:
-          name: public
-          path: public
+          name: dist
+          path: docs\.vitepress\dist
           include-hidden-files: true
           if-no-files-found: error
 
@@ -54,8 +54,8 @@ jobs:
         # 链接 https://github.com/actions/download-artifact
         uses: actions/download-artifact@v4
         with:
-          name: public
-          path: public
+          name: dist
+          path: dist
 
       # 现在部署到我自己的服务器上了，因此 gh-pages 分支废弃，但是该分支需要存在，因为 hexo-seo-autopush 依赖这个分支下的 bing.json。
       - name: Deploy to gh-pages-deprecated
@@ -63,7 +63,7 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages-deprecated
-          build_dir: public
+          build_dir: dist
           keep_history: false # 开启以后虽然会有 git 历史，但是无法在部署分支自动清理本该删除的文件，个人觉得不舒服，所以关了。
           allow_empty_commit: false
           # fqdn: xxx # 自定义域名。
@@ -80,8 +80,8 @@ jobs:
   #     - name: Download artifact
   #       uses: actions/download-artifact@v4
   #       with:
-  #         name: public
-  #         path: public
+  #         name: dist
+  #         path: dist
 
   #     - name: Deploy to My Own Server
   #       # 链接 https://github.com/easingthemes/ssh-deploy
@@ -89,7 +89,7 @@ jobs:
   #       env:
   #         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
   #         ARGS: "-avzr --times --update --delete"
-  #         SOURCE: "public/"
+  #         SOURCE: "dist/"
   #         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
   #         REMOTE_USER: ${{ secrets.REMOTE_USER }}
   #         TARGET: ${{ secrets.TARGET }}
