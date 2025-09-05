@@ -1,0 +1,357 @@
+---
+url: /guide/quick-start/record-video.md
+---
+# OBS 录制环境搭建教程
+
+新榜单规则中提到：
+
+> 使用 OBS 进行游戏视频录制，游戏界面配置榜单管理组指定的全键盘键鼠以及手柄映射（手柄选手）。
+>
+> * 键盘选手只需展示键鼠映射。
+> * 手柄玩家必须展示手柄映射和键鼠映射（以防止游戏过程中利用键盘快捷键使用外挂工具），连战完成后，利用键盘敲击此次连战暴伤数字并确保此过程被视频纪录（例如暴伤为 57.5%，依次敲击 5、7、5。此行为了确保键盘映射真实有效）。
+
+因此，本文就规则涉及到的 OBS 录制环境的搭建，提供一个简单的方案。
+
+## 安装 OBS
+
+OBS，全称 OBS Studio，是一款功能强大的开源软件，它使用户能够直接从电脑录制视频和直播内容到 Twitch，YouTube 和 Facebook Live 等平台。它在需要直播或录制屏幕活动的游戏玩家、YouTube 用户和专业人士中特别受欢迎。OBS Studio 允许创建由多个源组成的复杂场景，包括网络摄像头源、屏幕截图和音频输入，这些场景可以在直播期间无缝切换。凭借先进的混音功能、可自定义的视频质量和性能设置以及对各种插件和扩展的支持，OBS Studio 为高质量视频制作和直播提供了多功能且用户友好的解决方案。
+
+简单来讲，OBS 允许你录制视频和直播内容，同时可以自定义想要展示到屏幕上的内容，好用爱用。
+
+安装 OBS，我这里给出两种方案。
+
+1. 官网下载（最推荐）
+
+点击[此链接](https://obsproject.com/download)进行官网下载页面，找到最新版本进行下载。推荐安装 Installer，全自动流程。
+
+![image-20250830111911403](https://image.davidingplus.cn/images/2025/08/30/image-20250830111911403.png)
+
+2. Steam 下载
+
+OBS 能在 Steam 商店中找到，直接下载即可。
+
+![image-20250830112049331](https://image.davidingplus.cn/images/2025/08/30/image-20250830112049331.png)
+
+注意，通过 Steam 下载的 OBS，当切换账号以后，需要关闭 OBS，重新打开才能正常使用。对于有直播需求并且需要频繁切号的朋友非常不方便。一个比较好的解决思路是进入 OBS 的安装目录，创建入口程序 `obs64.exe` 的快捷方式，后续直接通过快捷方式打开即可。这样就绕过了 Steam 的检测环节。
+
+![image-20250830112335953](https://image.davidingplus.cn/images/2025/08/30/image-20250830112335953.png)
+
+另外：
+
+> 本来想放一份安装包到蓝奏云上的，但是蓝奏云免费版文件最大大小 100 MIB，安装包都 150 MIB 了。所以大家还是用前两种办法下载吧。
+>
+> 🐶🐶🐶狗头保命🐶🐶🐶
+
+## 基本配置
+
+在打开 OBS 之前，请先设置一下桌面的快捷方式的属性，右键快捷方式，选择属性，选择兼容性，勾选上以管理员模式启动。避免运行过程中 OBS 缺少管理员权限导致无法正常录制或直播。
+
+打开 OBS 以后，你的界面大概是这样的：
+
+![image-20250830113501507](https://image.davidingplus.cn/images/2025/08/30/image-20250830113501507.png)
+
+下面的源默认是空的，我们需要在里面添加能捕捉到显示屏的内容。录制黑猴一般只用得到显示器采集和游戏采集。
+
+关于显示器采集，采集方式默认自动即可，显示器选择你自己的显示器就行，这样 OBS 就能正常抓取到你的屏幕了。
+
+![image-20250830123514878](https://image.davidingplus.cn/images/2025/08/30/image-20250830123514878.png)
+
+关于游戏采集，模式可以选择采集全屏应用程序或者采集特定窗口。
+
+采集全屏应用程序，其他的默认即可。
+
+![image-20250830123934789](https://image.davidingplus.cn/images/2025/08/30/image-20250830123934789.png)
+
+采集特定窗口，在窗口中选择黑猴的程序 `b1-Win64-Shipping.exe`，其他的依旧默认即可。
+
+![image-20250830124103529](https://image.davidingplus.cn/images/2025/08/30/image-20250830124103529.png)
+
+## 录制视频
+
+上述的基本配置做好以后，点击开始录制就可以录制视频了。不过在录制视频以前建议先对录制的视频进行一些设置。以下会我自己使用的一些设置，大家可以根据这个进行调整成自己喜欢的样子。
+
+在视频栏，帧率建议选择 `59.94` 或者 `60`。
+
+![image-20250830124648702](https://image.davidingplus.cn/images/2025/08/30/image-20250830124648702.png)
+
+在输出栏，输出模式建议选择高级，以下会给我我自己的直播和录制的设置。
+
+直播的设置如下，没有直播需求的朋友直接看录制设置即可。有直播需求的朋友可以结合我这个和网上其他大佬的设置综合调整。
+
+![image-20250830124912787](https://image.davidingplus.cn/images/2025/08/30/image-20250830124912787.png)
+
+录制的录制设置如下，注意修改录像路径到自己指定的位置，防止不知道什么时候 C 盘炸了。
+
+![image-20250830125031474](https://image.davidingplus.cn/images/2025/08/30/image-20250830125031474.png)
+
+录制的编码器设置如下，比特率控制建议选 CBR，比特率 8000 到 10000 即可。
+
+![image-20250830125146633](https://image.davidingplus.cn/images/2025/08/30/image-20250830125146633.png)
+
+这样设置好以后，就可以开始录制了。更进一步还可以设置快捷键方便开始录制和停止录制。
+
+## 键鼠映射
+
+键盘映射需要用到一个 OBS 插件 [Input Overlay](https://obsproject.com/forum/resources/input-overlay.552/)，它能在直播中显示键盘、鼠标和手柄的输入情况。它会新增一个来源，用于可视化输入。
+
+这个插件通过纹理（texture）和配置文件来生成覆盖层。这意味着你可以自行配置在屏幕上显示哪些按键、它们的排列方式以及外观。默认情况下，插件已经自带了鼠标、键盘和手柄的预设文件。这些预设文件位于 GitHub Release 页面中的 `presets` 压缩包内。在 OBS 中创建一个 “Input Overlay” 来源时，你可以将其指向这些预设文件，或者指向你自己制作的配置文件。
+
+原下载链接在外网 [Github](https://github.com/univrsal/input-overlay) 上，有兴趣的朋友可以科学上网自己去下载最新版本。这里在蓝奏云上备份了 input-overlay v5.0.6。
+
+下载链接：
+
+* [input-overlay-5.0.6-windows-x64.zip](https://lzx0626.lanzouq.com/iU8hy34xgfeb)
+* [input-overlay-5.0.6-presets.zip](https://lzx0626.lanzouq.com/iVDRY34xgf0h)
+
+下载好以后，首先解压 input-overlay-5.0.6-windows-x64.zip，得到的文件类似如下：
+
+![image-20250830131510053](https://image.davidingplus.cn/images/2025/08/30/image-20250830131510053.png)
+
+将这些目录全部拷贝你自己的到 OBS 的安装根目录下，例如我的目录就是 `D:\Scoop\apps\obs-studio\current`，OBS 根目录类似如下：
+
+![image-20250830131618256](https://image.davidingplus.cn/images/2025/08/30/image-20250830131618256.png)
+
+完事以后重新打开 OBS，在添加源里面就会发现多了一个**输入叠加**的选项。这个就是添加键鼠映射的入口。
+
+以键盘映射为例，点击输入叠加，会让你选择贴图文件和配置文件。这些东西在上文提到的另一个文件 input-overlay-5.0.6-presets.zip 中，官方给了我们一些预设，直接拿来使用即可。将该文件解压出来以后，放到你自己找得到的位置（不一定是 OBS 的安装根目录）即可。
+
+![image-20250830131917080](https://image.davidingplus.cn/images/2025/08/30/image-20250830131917080.png)
+
+由于规则要求键盘映射需要全尺寸键盘，因此键盘的贴图文件推荐使用 `qwertz_full_size_german`。以下以 input-overlay-5.0.6-presets 目录为基准，给出了贴图文件和配置文件的路径。
+
+```markdown
+ 贴图文件：input-overlay-5.0.6-presets/qwertz_full_size_german/qwertz_full_size_german.png
+ 配置文件：input-overlay-5.0.6-presets/qwertz_full_size_german/qwertz_full_size_german.json
+```
+
+添加好以后，你就能在 OBS 中看到键盘映射了。至于在 OBS 的屏幕上放在哪，有多大，这个就读者自行去探索吧。
+
+另外，附上我自己使用的鼠标映射：
+
+```markdown
+贴图文件：input-overlay-5.0.6-presets/mouse/mouse.png
+配置文件：input-overlay-5.0.6-presets/mouse/mouse-arrow.json
+```
+
+## 手柄映射
+
+手柄映射有两种方式，一种是和上文键鼠映射的方式一样，添加一个手柄的贴图和 json 文件，另一种是通过浏览器 URL 采集实现。
+
+第一种方式，同上文给出我自己推荐的手柄映射配置：
+
+```markdown
+贴图文件：input-overlay-5.0.6-presets/gamepad/game-pad.png
+配置文件：input-overlay-5.0.6-presets/gamepad/game-pad.json
+```
+
+第二种方式，通过浏览器 URL 采集实现。首先给出一个在线链接 [Gamepad Viewer](https://ezgame.cc/tools/gamepadviewer.com/)。这是一个在线网站，可以让你根据自己的喜好设置手柄映射，然后返回给你一个 URL，这个 URL 能被 OBS 的浏览器源识别并展示出来。
+
+这里给我我自己的手柄映射 URL：
+
+```markdown
+https://ezgame.cc/tools/gamepadviewer.com/?p=1&s=0
+```
+
+![image-20250830133003743](https://image.davidingplus.cn/images/2025/08/30/image-20250830133003743.png)
+
+## 帧率显示
+
+帧率显示有很多办法，我知道就有微信小飞机，Steam 自带的帧数显示，部分厂商例如联想自带的帧数显示，游戏加加等。
+
+读者选择自己喜欢的就行，这里不再赘述。
+
+## 最终效果
+
+最终录制出来的效果大致如下：
+
+![image-20250830133603428](https://image.davidingplus.cn/images/2025/08/30/image-20250830133603428.png)
+
+## 回放缓存
+
+待补。
+
+## 使用 OBS 直播
+
+待补。
+
+## 参考文档
+
+待补。
+
+---
+
+---
+url: /guide/quick-start/install.md
+---
+# 实时关键数据显示 MOD 安装教程
+
+1. 下载 MOD：[链接点此](/guide/quick-start/release.html)
+
+2. 解压 “实时关键数据显示 MOD（九禁连战专用）.zip”，将压缩包内的 CSharpLoder 文件夹和 version.dll 文件拷贝到<黑神话悟空安装目录>\b1\Binaries\Win64文件夹下（例如："C:\Program Files (x86)\Steam\steamapps\common\BlackMythWukong\b1\Binaries\Win64"）。
+
+![](https://image.davidingplus.cn/images/2025/08/27/AgAABVpOMEyJlEqtlZtOOKDlQrVQ-iwn.png)
+
+> 注意事项！！！为确保 mod 可以和风灵月影兼容，请务必使用 mod 压缩包内提供的 CSharpLoader（如果你已经安装了其他途径下载的 CSharpLoader 用于其他 mod，请先将原来的 CSharpLoader 文件夹和 version.dll 暂时移动到其他地方备份！打完连战后再替换回原来的 CSharpLoader 和 version.dll！！！）
+
+3. 开启游戏即可看到实时关键数据显示在游戏界面。
+
+![](https://image.davidingplus.cn/images/2025/08/27/AgAABVpOMEyI8eEzoclPcqJseAnB3XFk.png)
+
+4. MOD 删除：将 CSharpLoader 文件夹和 version.dll 删除即可。
+
+---
+
+---
+url: /guide/ranking-list/new-list.md
+---
+# 新榜单
+
+## 说明
+
+本页面展示的榜单完全来源于原腾讯文档中的内容，原链接[见此](https://docs.qq.com/sheet/DTUhETnNCQ0RoRm9v)。
+
+## 榜单预览
+
+---
+
+---
+url: /guide/quick-start/rules.md
+---
+# 新榜单入榜规则
+
+在新榜单的背景下，为了避免各位的成绩出现问题，我们不得不对各位的录制环境提出一些基本规则，还请各位理解！
+
+重要的事情说三遍：
+
+> 请先阅读入榜规则，避免凹出无效成绩！！！！
+>
+> 请先阅读入榜规则，避免凹出无效成绩！！！！
+>
+> 请先阅读入榜规则，避免凹出无效成绩！！！！
+
+另外说明一点：
+
+> 本部分的规则摘录自新榜单中展示的规则，若有更新不及时，请优先参考[此链接](https://docs.qq.com/sheet/DTUhETnNCQ0RoRm9v?tab=1ts630)中的规则。
+
+## 入榜规则
+
+1. 不得使用风灵月影（风灵月影全局加速功能除外）、增加 Buff MOD 等修改正常游戏数据的工具进行连战，一但发现永不录用成绩。
+2. 必须使用九禁连战速通专用关键数据实时显示 MOD 进行连战（[下载地址](https://b1.davidingplus.cn/guide/release.html#showinfo)，[安装教程](https://b1.davidingplus.cn/guide/install.html)）。版本号必须 >= 1.0。
+3. 战斗界面必须展示全部 UI 组件，伤害数字显示必须打开。
+4. 游戏界面不能遮挡正常交战画面及数据显示界面。
+5. 战斗过程中不能进行暂停游戏，切换界面，激活软件等无关操作。
+6. 使用 OBS 进行游戏视频录制，游戏界面配置榜单管理组指定的全键盘键鼠以及手柄映射（手柄选手）。配置教程：<待补充>
+   * 键盘选手只需展示键鼠映射。
+   * 手柄玩家必须展示手柄映射和键鼠映射（以防止游戏过程中利用键盘快捷键使用外挂工具），连战完成后，利用键盘敲击此次连战暴伤数字并确保此过程被视频纪录（例如暴伤为 57.5%，依次敲击 5、7、5。此行为了确保键盘映射真实有效）。
+7. 通关后必须展示结算界面以及展示配装、泡酒物、天赋加点。
+8. 游戏内设置 120 帧率上限。画面需要显示游戏帧数（使用任意显示帧数工具均可）。
+
+以下为建议而非强制：
+
+9. 尽量选择低画质，确保视频流畅不掉帧。
+10. 建议保留原版录制视频。
+
+## 特别说明
+
+1. 为鼓励参与，每人只取一个最佳成绩入榜。
+2. 为降低管理组搜寻成绩工作量，只接受发布于 B 站、抖音的连战视频。
+3. 特殊情况可以酌情放宽入榜条件，例如特殊原因未能及时更新实时数据显示 MOD 版本，忘记（或未来得及就发生闪退等意外情况）展示配装、泡酒物、天赋点等。每人放宽条件次数有限，最终解释权归榜单管理组所有。
+4. 现有规则防作弊机制无法做到 100% 完美，遇到特殊情况，成绩是否有效决定最终解释权归榜单管理组所有。
+5. 其他问题请加入 QQ 群 1037297581 进行讨论。
+
+祝各位九禁速通天命人坐牢愉快！！！
+
+---
+
+---
+url: /guide/ranking-list/old-list.md
+---
+# 旧榜单
+
+## 说明
+
+本页面展示的榜单完全来源于原腾讯文档中的内容，原链接[见此](https://docs.qq.com/sheet/DTXNnc09DRGZWVGxt)。
+
+## 榜单预览
+
+---
+
+---
+url: /guide/quick-start/release.md
+---
+# 版本发布日志
+
+> 以下所有资源的链接均为蓝奏云盘的分享链接。若想直链下载，可以科学上网去我的 Github 仓库的 [Release](https://github.com/DavidingPlus/b1-showinfo-docs/releases) 进行下载。别问为什么没有 Gitee，这玩意狗都不用。
+
+## ShowInfo
+
+本 MOD 的压缩包中整合了 MOD 加载器 CSharpLoader 和 MOD 本体。
+
+为方便查找和下载，这里的版本管理采用时间线倒序，将最新的版本放在前面，后续更新稳定 stable 版本以后会单独说明。
+
+### v1.0
+
+宋笛大佬经过不懈努力，最终发布的正式版本 v1.0。同时也伴随着新榜单规则的制定完善和新榜单记录的开始。
+
+下载链接：[v1.0](https://lzx0626.lanzouq.com/iWkYQ34uuhsd)
+
+### v0.1-dev.x
+
+宋笛大佬根据大家反馈，不断向前推进的 dev 版本，为了避免版本冗杂，因此放在一个 release 中，部分版本的特殊改动会具体说明。
+
+下载链接如下：
+
+* [v0.1-dev.8](https://lzx0626.lanzouq.com/il7zW34rylmh)
+
+* [v0.1-dev.7](https://lzx0626.lanzouq.com/io07d34o37kh)：目前测试来看，这个版本稳定的一比，本人鏖战 4 小时 15 分钟，最终体力不支败下阵来。
+
+* [v0.1-dev.6](https://lzx0626.lanzouq.com/iAUEw34o37he)
+
+* [v0.1-dev.5](https://lzx0626.lanzouq.com/iomaR34o37fc)：宋笛大佬为了针对性地查找 Bug，增加了一个终端输出信息。
+
+* [v0.1-dev.4](https://lzx0626.lanzouq.com/i4aMM34o37eb)
+
+* [v0.1-dev.3](https://lzx0626.lanzouq.com/ikIV834o37da)
+
+* [v0.1-dev.2](https://lzx0626.lanzouq.com/iVghs34o37bi)
+
+* [v0.1-dev.1](https://lzx0626.lanzouq.com/i3TyW34o377e)
+
+* [v0.1-dev](https://lzx0626.lanzouq.com/i1PU334o37li)
+
+### v0.0
+
+最初发布的测试版本。
+
+下载链接：[v0.0](https://lzx0626.lanzouq.com/ihh1S34o375c)
+
+## CSharpLoader
+
+黑神话悟空 MOD 的 CSharp 加载器，原项目地址：[B1CSharpLoader](https://github.com/czastack/B1CSharpLoader)。
+
+---
+
+---
+url: /guide.md
+---
+# 简介
+
+## 前置背景
+
+本人是一名黑神话悟空连战九禁速通爱好者。但鉴于 2025 年 8 月中旬左右，九禁连战各种离谱成绩出现，榜单管理者宋笛大佬正在研究如何开发一个永久显示实时暴击率到战斗界面的 mod，以杜绝使用风灵月影和给招式加暴击率 buff 的 mod 打成绩的情况，净化九禁速通环境。历经千辛万苦，宋笛大佬成功做出了测试版本，本网站是对其发包的版本归档以及一些相关文档。
+
+## 基本介绍
+
+本部分包含了实时关键数据显示 MOD 的安装和新榜单的一些规则。
+
+后续可以考虑在其他版块加入更多内容，包括评论、趣事等内容。欢迎大家联系本人或者宋笛提出更多建议！
+
+最后，各位天命人，在拿到 MOD 装好以后，凹就完事了。祝大家凹出好成绩！
+
+## 基础信息
+
+> 网站作者：[DavidingPlus](https://davidingplus.cn)。
+>
+> MOD 作者：宋笛很厉害，QQ：623969184。
+
+欢迎加入九禁速通交流群（九禁速通第一人@蚌的粉丝群）：1037297581。
