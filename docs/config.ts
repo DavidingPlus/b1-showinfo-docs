@@ -109,8 +109,8 @@ function nav(): DefaultTheme.NavItem[] {
                 { text: '快速上手', link: '/guide/quick-start/install' }
             ]
         },
-        { text: '新榜链接', link: 'https://docs.qq.com/sheet/DTUhETnNCQ0RoRm9v' },
-        { text: '旧榜链接', link: 'https://docs.qq.com/sheet/DTXNnc09DRGZWVGxt' }
+        { text: '新榜链接', link: '/guide/ranking-list/new-list' },
+        { text: '旧榜链接', link: '/guide/ranking-list/old-list' }
     ]
 }
 
@@ -131,6 +131,14 @@ function guideSidebar(): DefaultTheme.SidebarItem[] {
                 { text: '版本发布日志', link: 'quick-start/release' },
                 { text: '新榜规则', link: 'quick-start/rules' },
                 { text: 'OBS 录制环境搭建', link: 'quick-start/record-video' }
+            ]
+        },
+        {
+            text: '成绩榜单',
+            collapsed: false,
+            items: [
+                { text: '新榜单', link: 'ranking-list/new-list' },
+                { text: '旧榜单', link: 'ranking-list/old-list' }
             ]
         }
     ]

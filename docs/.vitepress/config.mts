@@ -59,7 +59,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: '祝各位九禁速通天命人坐牢愉快！！！',
+      message: '<a href="https://beian.miit.gov.cn/">蜀 ICP 备 2024088070 号</a>',
       copyright: 'Copyright © 2025-present <a href="https://davidingplus.cn/">DavidingPlus</a>'
     }
   },
